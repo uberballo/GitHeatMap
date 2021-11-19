@@ -1,8 +1,5 @@
 steps:
   - name: Hello world action
-    with: # Set the secret as an input
-      secret_key: ${{ secrets.MIRO_AUTH_KEY}}
-      board_id: ${{ secrets.MIRO_BOARD_ID}}
     description: 'Greet someone and record the time'
     inputs:
       who-to-greet:  # id of input
