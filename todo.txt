@@ -1,0 +1,11 @@
+
+cli:
+* Check files that are pushed by `git push`
+* call backend
+* connect to `git push`
+
+
+backend:
+* check for shape
+* create shape
+* update shape
