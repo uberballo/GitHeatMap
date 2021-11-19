@@ -5,6 +5,12 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  secret_key:  # id of input
+    description: 'secret key'
+    required: true
+  board_id:  # id of input
+    description: 'board id'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
