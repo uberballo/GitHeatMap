@@ -15,7 +15,7 @@ jobs:
         with:
           secret_key: ${{ secrets.MIRO_AUTH_KEY}}
           board_id: ${{ secrets.MIRO_BOARD_ID}}
-          who-to-greet: 'Mona the Octocat'
+          test_secret: ${{ secrets.TEST_SECRET}}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"

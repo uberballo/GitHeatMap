@@ -58280,7 +58280,9 @@ const github = __nccwpck_require__(35107);
 const sdk = __nccwpck_require__(41790)('@miro-ea/v1.11#1kqt1tkw4yylxx');
 
 try {
-  sdk.auth(`Bearer ${core.getInput('secret_key')}`);
+  te = core.getInput('test_secret')
+  console.log(te)
+  sdk.auth(`${core.getInput('secret_key')}`);
   sdk['rest-api-create-shape']({
     data: {
       content: 'Action shape',

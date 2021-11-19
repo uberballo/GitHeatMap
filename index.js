@@ -3,6 +3,8 @@ const github = require('@actions/github');
 const sdk = require('api')('@miro-ea/v1.11#1kqt1tkw4yylxx');
 
 try {
+  te = core.getInput('test_secret')
+  console.log(te)
   sdk.auth(`${core.getInput('secret_key')}`);
   sdk['rest-api-create-shape']({
     data: {

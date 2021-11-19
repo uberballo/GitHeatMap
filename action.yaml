@@ -7,6 +7,9 @@ inputs:
   board_id:  # id of input
     description: 'board id'
     required: true
+  test_secret:  # id of input
+    description: 'test'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
