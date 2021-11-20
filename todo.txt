@@ -2,3 +2,7 @@ backend:
 * check for shape
 * create shape
 * update shape
+
+marketing:
+* finalize project submission
+* update github readme
