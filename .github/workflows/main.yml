@@ -3,7 +3,7 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to create a shape
     steps:
       # To use this repository's private action,
       # you must check out the repository
@@ -13,7 +13,9 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: hello
         with:
-          who-to-greet: 'Mona the Octocat'
+          secret_key: ${{ secrets.MIRO_AUTH_KEY}}
+          board_id: ${{ secrets.MIRO_BOARD_ID}}
+          test_secret: ${{ secrets.TEST_SECRET}}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"

@@ -1,17 +1,18 @@
-steps:
-  - name: Hello world action
-    with: # Set the secret as an input
-      secret_key: ${{ secrets.MIRO_AUTH_KEY}}
-      board_id: ${{ secrets.MIRO_BOARD_ID}}
-    description: 'Greet someone and record the time'
-    inputs:
-      who-to-greet:  # id of input
-        description: 'Who to greet'
-        required: true
-        default: 'World'
-    outputs:
-      time: # id of output
-        description: 'The time we greeted you'
-    runs:
-      using: 'node12'
-      main: 'dist/index.js'
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  secret_key:  # id of input
+    description: 'secret key'
+    required: true
+  board_id:  # id of input
+    description: 'board id'
+    required: true
+  test_secret:  # id of input
+    description: 'test'
+    required: true
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node12'
+  main: 'index.js'
