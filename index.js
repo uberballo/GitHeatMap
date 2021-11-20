@@ -2,6 +2,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const sdk = require('api')('@miro-ea/v1.11#1kqt1tkw4yylxx');
 
+getBoardContents()
+
 try {
   te = core.getInput('test_secret')
   console.log(te)
@@ -38,4 +40,28 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
 } catch (error) {
   core.setFailed(error.message);
+}
+
+const getBoardContents = (boardId) => {
+  const requestUrl = `https://api.miro.com/v2/boards/${boardId}/widgets`
+  const result = get(requestUrl)
+}
+
+const get = (url) => {
+  const response = await fetch(url, {
+    method: 'GET',
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${core.getInput('secret_key')}`
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+
+  return response.json()
 }
