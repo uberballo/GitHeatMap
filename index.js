@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const sdk = require('api')('@miro-ea/v1.11#1kqt1tkw4yylxx');
-
+/*
 try {
   te = core.getInput('test_secret')
   console.log(te)
@@ -39,6 +39,7 @@ try {
 } catch (error) {
   core.setFailed(error.message);
 }
+*/
 
 const getBoardContents = async (boardId) => {
   const requestUrl = `https://api.miro.com/v2/boards/${boardId}/widgets`
