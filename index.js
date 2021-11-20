@@ -42,12 +42,13 @@ try {
   core.setFailed(error.message);
 }
 
-const getBoardContents = (boardId) => {
+const getBoardContents = async (boardId) => {
   const requestUrl = `https://api.miro.com/v2/boards/${boardId}/widgets`
-  const result = get(requestUrl)
+  const result = await get(requestUrl)
+  console.log(result)
 }
 
-const get = (url) => {
+const get = async (url) => {
   const response = await fetch(url, {
     method: 'GET',
     mode: 'cors', // no-cors, *cors, same-origin
