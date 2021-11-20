@@ -42,6 +42,7 @@ try {
 */
 
 const getBoardContents = async (boardId) => {
+  console.log('test secret', core.getInput('test_secret'))
   const requestUrl = `https://api.miro.com/v2/boards/${boardId}/widgets`
   const result = await get(requestUrl)
   console.log(result)
